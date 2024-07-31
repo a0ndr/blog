@@ -23,7 +23,7 @@
     }
 </style>
 
-<div class="mx-auto">
+<div class="mx-auto break-words">
     <div class="text-start">
         <h1 class="text-4xl">{data.post.title}</h1>
         <p class="text-base text-gray-500">[ {since} by {data.author.username} ]</p>

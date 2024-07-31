@@ -2,6 +2,7 @@
 
 import prisma from '$lib/prisma';
 import type { PageServerLoad } from './$types';
+import 'dotenv/config';
 
 export const load = (async () => {
 	const texts = await prisma.text.findMany();

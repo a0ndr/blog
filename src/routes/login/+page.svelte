@@ -13,7 +13,7 @@
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ username, password }),
-			// credentials: 'include'
+			credentials: 'include'
 		});
 		if (!res.ok) {
 			error = true;
