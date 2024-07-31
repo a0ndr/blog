@@ -1,0 +1,12 @@
+services:
+  blog:
+    container_name: blog
+    image: git.ondrejcak.sk/adam/blog
+    ports:
+      - "4173:4173"
+    environment:
+      - DATABASE_URL="file:./dev.db"
+      - PASSWORD_SECRET="V3ryS3cur3.CH4NG3_TH1S!"
+      - TOKEN_SECRET="V3rYS3cur3.CH4NG3_TH1S!"
+      - COOKIE_NAME="M4K3_TH1S_R4ND0M!!!"
+      - IS_HTTPS=false
