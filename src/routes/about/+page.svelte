@@ -16,4 +16,4 @@
 
 <hr class="w-48 border-t-2 border-slate-700 mx-auto my-5">
 
-<p class="text-slate-500">Made with ♥︎ by Fuzzy! ∙ Source code on <a href="https://github.com/a0ndr/blog" class="underline" target="_blank">GitHub</a> ∙ Licensed under GNU GPLv3</p>
+<p class="text-slate-500 mb-5">Made with ♥︎ by Fuzzy! ∙ Source code on <a href="https://github.com/a0ndr/blog" class="underline" target="_blank">GitHub</a> ∙ Licensed under GNU GPLv3</p>
