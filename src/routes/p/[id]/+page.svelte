@@ -29,7 +29,7 @@
         <p class="text-base text-gray-500">[ {since} by {data.author.username} ]</p>
     </div>
     <hr class="!w-full">
-    <div class="prose !max-w-none text-gray-300 prose-headings:text-gray-300 text-start prose-a:text-gray-200 prose-a:underline">
+    <div class="prose !max-w-none text-gray-300 prose-headings:text-gray-300 text-start prose-a:text-gray-200 prose-a:underline prose-strong:text-gray-200 prose-em:italic">
         {@html converter.makeHtml(data.post.content)}
     </div>
 </div>

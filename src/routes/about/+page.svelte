@@ -10,7 +10,7 @@
     const alignment = data.config.find((x: {key: string, value: string}) => x.key === "ABOUT_TEXT_ALIGNMENT").value;
 </script>
 
-<div class="prose !max-w-none text-{alignment} text-gray-300 prose-headings:text-gray-300 prose-a:text-gray-200 prose-a:underline">
+<div class="prose !max-w-none text-{alignment} text-gray-300 prose-headings:text-gray-300 prose-a:text-gray-200 prose-a:underline prose-strong:text-gray-200 prose-em:italic">
     {@html converter.makeHtml(data.texts.find((x: {id: string, content: string}) => x.id === "ABOUT_US").content)}
 </div>
 
