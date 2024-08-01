@@ -19,7 +19,6 @@ export const load = (async () => {
 				createdAt: 'desc'
 			}
 		],
-		take: 3
 	});
 
 	return { texts, posts, users, config, latestPosts };

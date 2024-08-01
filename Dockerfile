@@ -16,6 +16,8 @@ RUN /root/.local/share/pnpm/pnpm build
 FROM node:20-slim AS prod
 
 RUN apt-get update && apt-get install -y openssl
+
+WORKDIR /app
 COPY --from=build /app .
 
 EXPOSE 4173
