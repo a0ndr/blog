@@ -14,7 +14,7 @@
 	<a href="{mode === 'public' ? '/p' : '/cutiezone/edit'}/{post.id}">
 		<h3 class="text-lg">{post.title}</h3>
 		<p class="text-sm text-gray-500">
-			[ {since} by {data.users.find((x: User) => x.id === post.authorId) ? data.users.find((x: User) => x.id === post.authorId).username : "Deleted User"} ]
+			[ {since} by {data.users.find((x) => x.id === post.authorId) ? data.users.find((x) => x.id === post.authorId).username : "Deleted User"} ]
 			{#if mode === 'admin'}
 				<span class={post.published ? 'text-green-600' : 'text-yellow-600'}
 					>{post.published ? 'LIVE' : 'DRAFT'}</span

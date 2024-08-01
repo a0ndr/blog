@@ -8,7 +8,7 @@
 <h1 class="text-xl">Welcome to the cutie zone, {data.user.username}!</h1>
 
 <div class="w-100 text-start mt-5">
-	{#each data.latestPosts as post}
+	{#each data.posts as post}
 		<PostEntry {post} {data}  mode="admin" />
 	{/each}
 </div>
