@@ -14,3 +14,19 @@
 .link:hover .link-text {
     text-decoration: underline;
 }
+
+.note-controls, .art-controls {
+	visibility: hidden;
+}
+
+.note-entry:hover .note-controls, .art-entry:hover .art-controls {
+	visibility: visible;
+}
+
+.art-controls-edit {
+	visibility: hidden;
+}
+
+.art-controls-edit[editing='true'] {
+	visibility: visible;
+}

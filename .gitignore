@@ -23,3 +23,8 @@ vite.config.ts.timestamp-*
 # Prisma
 prisma/migrations
 prisma/*.db
+prisma/*.db-journal
+
+static/files/art/*
+!static/files/art/.gitkeep
+!src/routes/(traps)/.env

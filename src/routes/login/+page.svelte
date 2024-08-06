@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
+	import { Title } from '$lib/title';
 	import type { PageData } from '../cuties-only/$types';
 	import type { User } from '@prisma/client';
 
@@ -27,9 +28,11 @@
 			}
 		}
 	}
+
+	Title.set("ProtoBlog - Log in")
 </script>
 
-<div class="my-auto">
+<form class="my-auto" on:submit={login}>
 	<p class="text-red-500 {error ? '' : 'hidden'}">Invalid username or password.</p>
 
 	<input
@@ -47,5 +50,5 @@
         on:keydown={() => error = false}
 	/><br />
 
-	<Button text="*** Login ***" callback={async () => await login()} classes="mt-3" type="submit" />
-</div>
+	<Button text="*** Login ***" callback={() => {}} classes="mt-3" type="submit" />
+</form>

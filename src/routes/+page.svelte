@@ -6,16 +6,13 @@
     import showdown from "showdown";
 
     export let data: PageData;
-	const intro = data.texts.find((x: {id: string, content: string}) => x.id === "HOME_INTRO").content;
 
-    onMount(() => {
-        Title.set("ProtoBlog - Home");
-    });
+    Title.set("ProtoBlog - Home");
 
     const conv = new showdown.Converter();
 </script>
 
-{@html conv.makeHtml(intro)}
+{@html conv.makeHtml(data.texts.HOME_INTRO)}
 
 <!-- <PostEntry post={data.posts.find((x: Post) => x.id === 1)} /> -->
 <LatestPosts data={data} />

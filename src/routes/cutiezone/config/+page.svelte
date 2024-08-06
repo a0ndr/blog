@@ -1,5 +1,7 @@
 <script lang="ts">
-	import type { PageData } from '../$types';
+	import { Title } from '$lib/title';
+	import { convertAssociativeArrayToIndexedArrayBasedOnValue } from '$lib/util';
+import type { PageData } from '../$types';
 
 	export let data: PageData;
 
@@ -17,11 +19,17 @@
         });
         window.location.href = `/cutiezone/config`;
     }
+
+    // @ts-ignore
+    const cfg: Array<{ key: string, value: string }> = convertAssociativeArrayToIndexedArrayBasedOnValue(data.config, "key", "value");
+    
+    Title.set('ProtoBlog - CZ - Config');
+
 </script>
 
 <h3 class="text-2xl">Config</h3>
 
-{#each data.config as config}
+{#each cfg as config}
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div class="w-full mt-3 opacity-80 hover:opacity-100 cursor-pointer" on:click={() => edit(config.key, config.value)}>

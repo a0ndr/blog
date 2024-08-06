@@ -1,7 +1,8 @@
 <script lang="ts">
 	import Showdown from "showdown";
-	import type { PageData } from "../$types";
+	import type { PageData } from "./$types";
 	import RelativeTime from "@yaireo/relative-time";
+	import { Title } from "$lib/title";
 
     export let data: PageData;
 
@@ -9,6 +10,8 @@
     converter.setFlavor("github");
 
     const since = new RelativeTime().from(data.post.createdAt);
+
+    Title.set(`${data.post.title} - ProtoBlog`);
 
 </script>
 
@@ -26,10 +29,10 @@
 <div class="mx-auto break-words">
     <div class="text-start">
         <h1 class="text-4xl">{data.post.title}</h1>
-        <p class="text-base text-gray-500">[ {since} by {data.author.username} ]</p>
+        <p class="text-base text-gray-500">[ {since} by {data.author!.username} ]</p>
     </div>
     <hr class="!w-full">
     <div class="prose !max-w-none text-gray-300 prose-headings:text-gray-300 text-start prose-a:text-gray-200 prose-a:underline prose-strong:text-gray-200 prose-em:italic">
-        {@html converter.makeHtml(data.post.content)}
+        {@html converter.makeHtml(data.post.content!)}
     </div>
 </div>

@@ -38,7 +38,10 @@
 	<Link text="New post" url="/cutiezone/new" />
 	<Link text="Manage users" url="/cutiezone/users" />
     <Link text="Edit texts" url="/cutiezone/texts" />
+	<Link text="Art" url="/cutiezone/art" />
 	<Link text="Config" url="/cutiezone/config" />
+	<Link text="IPs" url="/cutiezone/ips" />
+	<Link text="Violations" url="/cutiezone/violations" />
 	<Button text="Change password" callback={changePassword} />
 	<Button text="Logout" callback={logout} />
 </nav>

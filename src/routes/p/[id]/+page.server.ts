@@ -28,6 +28,11 @@ export const load = (async ({ params }) => {
 	const author = await prisma.user.findFirst({
 		where: {
 			id: post.authorId!
+		},
+		select: {
+			username: true,
+			id: true,
+			password_hash: false
 		}
 	});
 

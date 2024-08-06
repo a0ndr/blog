@@ -4,6 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
+		"dev:host": "vite dev --host",
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -20,6 +21,7 @@
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@tailwindcss/typography": "^0.5.13",
+		"@types/country-flag-icons": "^1.2.2",
 		"@types/jsonwebtoken": "^9.0.6",
 		"@types/node": "^22.0.0",
 		"@types/showdown": "^2.0.6",
@@ -41,7 +43,9 @@
 		"@prisma/client": "5.17.0",
 		"@tailwindcss/forms": "^0.5.7",
 		"@yaireo/relative-time": "^1.0.4",
+		"abuseipdb-client": "^0.1.129",
 		"argon2": "^0.40.3",
+		"country-flag-icons": "^1.5.13",
 		"dotenv": "^16.4.5",
 		"jsonwebtoken": "^9.0.2",
 		"showdown": "^2.1.0"

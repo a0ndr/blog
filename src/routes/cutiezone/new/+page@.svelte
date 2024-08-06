@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PostEditor from "$lib/components/PostEditor.svelte";
+	import { Title } from "$lib/title";
 
     async function save(title: string, content: string, published: boolean) {
         await fetch('new', {
@@ -21,6 +22,7 @@
         await save(title, content, true);
     }
 
+    Title.set('ProtoBlog - Creating a post');
 </script>
 
 <PostEditor title="" content="" saveAsDraftCallback={saveAsDraft} publishCallback={publish} />

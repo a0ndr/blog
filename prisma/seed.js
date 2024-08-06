@@ -38,6 +38,36 @@ async function main() {
 			value: 'center'
 		}
 	});
+	await prisma.config.create({
+		data: {
+			key: 'NUM_OF_LATEST_POSTS',
+			value: '3'
+		}
+	});
+	await prisma.config.create({
+		data: {
+			key: 'NUM_OF_LATEST_NOTES',
+			value: '3'
+		}
+	});
+	await prisma.config.create({
+		data: {
+			key: 'CDN_URL',
+			value: ''
+		}
+	});
+	await prisma.config.create({
+		data: {
+			key: 'MCDN_URL',
+			value: ''
+		}
+	});
+	await prisma.config.create({
+		data: {
+			key: 'ABUSEIPDB_USER_ID',
+			value: ''
+		}
+	});
 
 	console.log(`Seeding finished.`);
 }

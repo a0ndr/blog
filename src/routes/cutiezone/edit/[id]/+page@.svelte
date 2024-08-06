@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PostEditor from "$lib/components/PostEditor.svelte";
+	import { Title } from "$lib/title";
 	import type { PageData } from "./$types";
 
     export let data: PageData;
@@ -38,6 +39,8 @@
         });
         window.location.href = "/cutiezone"
     }
+
+    Title.set('[PB] Editing ' + title);
 </script>
 
 <PostEditor title={title!} content={content!} saveAsDraftCallback={saveAsDraft} publishCallback={publish} deleteCallback={deletePost} />

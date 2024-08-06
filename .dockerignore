@@ -1,5 +1,8 @@
 .vscode/
 node_modules/
 prisma/migrations/
-prisma/dev.db
+prisma/*.db
+prisma/*.db-journal
 .env.example
+static/files/art/*
+!static/files/art/.gitkeep

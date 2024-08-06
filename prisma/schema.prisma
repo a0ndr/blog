@@ -15,7 +15,10 @@ model User {
   id            Int    @id @default(autoincrement())
   username      String
   password_hash String
+  avatar        String?
+  status        String?
   posts         Post[]
+  notes         Note[]
 }
 
 model Post {
@@ -38,4 +41,44 @@ model Text {
 model Config {
   key   String @id
   value String
+}
+
+model Ip {
+  ip         String   @id
+  requests   Int      @default(1)
+  blocked    Boolean  @default(false)
+  first_seen DateTime @default(now())
+  last_seen  DateTime @default(now())
+  last_check DateTime @default(now())
+  next_check DateTime @default(now())
+  country    String   @default("Unknown")
+  score      Int      @default(0)
+  reports    Int      @default(0)
+}
+
+model Note {
+  id        Int      @id @default(autoincrement())
+  content   String
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  Int
+  createdAt DateTime @default(now())
+}
+
+model Art {
+  id        String   @id
+  image     String
+  caption   String
+  artist    String
+  createdAt DateTime @default(now())
+  visible   Boolean  @default(true)
+}
+
+model Violations {
+  id      Int      @id @default(autoincrement())
+  ip      String
+  type    String
+  at      DateTime @default(now())
+  count   Int      @default(1)
+  expires DateTime?
+  comment String   @default("")
 }

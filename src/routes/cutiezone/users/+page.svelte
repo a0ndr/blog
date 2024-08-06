@@ -1,9 +1,12 @@
 <script lang="ts">
 	import Button from "$lib/components/Button.svelte";
+	import { Title } from "$lib/title";
     import type { PageData } from "../$types";
 
     export let data: PageData;
     const { users } = data;
+
+    Title.set('ProtoBlog - CZ - Users');
 
     async function create() {
         const username = prompt("What should be the username?");

@@ -6,11 +6,19 @@ RUN apt-get -y install nodejs && wget -qO- https://get.pnpm.io/install.sh | ENV=
 RUN . ~/.bashrc
 
 WORKDIR /app
-COPY . .
+COPY package.json .
+COPY pnpm-lock.yaml .
 
 RUN /root/.local/share/pnpm/pnpm i
+
+WORKDIR /app/prisma
+COPY prisma .
+COPY .env ..
 RUN /root/.local/share/pnpm/pnpm prisma generate
 RUN /root/.local/share/pnpm/pnpm prisma migrate dev --name init
+
+WORKDIR /app
+COPY . .
 RUN /root/.local/share/pnpm/pnpm build
 
 FROM node:20-slim AS prod
