@@ -1,3 +1,84 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap');
+
+.header-font {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.subheader-font {
+    font-family: "Domine", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.body-font {
+    font-family: "Domine", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navlink:hover {
+    text-decoration: underline;
+    text-decoration-color: #a3e2ff;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 2px;
+}
+
+.navlink.active {
+    text-decoration: underline;
+    text-decoration-color: #67e8f9;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 2px;
+    color: #fff;
+}
+
+.anavlink:hover {
+    text-decoration: underline;
+    text-decoration-color: #fca5a5;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 2px;
+}
+
+.anavlink.active {
+    text-decoration: underline;
+    text-decoration-color: #f87171;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 2px;
+    color: #fff;
+}
+
+strong {
+    color: #fff;
+}
+
+a:not(.no-default), .link {
+    text-decoration: underline;
+    text-decoration-color: #fff;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 2px;
+    color: #fff;
+}
+
+a:hover:not(.no-default), .link:hover {
+    text-decoration: underline;
+    text-decoration-color: #67e8f9;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 2px;
+    color: #67e8f9;
+}
+
+.post-entry:hover .post-entry-title  {
+    text-decoration: underline;
+    text-decoration-color: #67e8f9;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 2px;
+}

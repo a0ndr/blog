@@ -1,1 +1,7 @@
-// place files you want to import through the `$lib` alias in this folder.
+import { writable } from "svelte/store";
+
+// https://tailwindcss.com/docs/customizing-colors
+export const Theme = writable({
+    PrimaryColor: "cyan-300",
+    AccentColor: "cyan-200"
+})
