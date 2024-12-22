@@ -1,0 +1,39 @@
+-- CreateTable
+CREATE TABLE "Post" (
+    "Id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NOT NULL,
+    "Content" TEXT NOT NULL,
+    "Slug" TEXT NOT NULL,
+    "Image" TEXT NOT NULL,
+    "CreatedAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "UpdatedAt" DATETIME NOT NULL,
+    "Published" BOOLEAN NOT NULL DEFAULT false,
+    "CategoryId" INTEGER,
+    CONSTRAINT "Post_CategoryId_fkey" FOREIGN KEY ("CategoryId") REFERENCES "Category" ("Id") ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "Category" (
+    "Id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL
+);
+
+-- CreateTable
+CREATE TABLE "Tag" (
+    "Id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL
+);
+
+-- CreateTable
+CREATE TABLE "_PostToTag" (
+    "A" INTEGER NOT NULL,
+    "B" INTEGER NOT NULL,
+    CONSTRAINT "_PostToTag_A_fkey" FOREIGN KEY ("A") REFERENCES "Post" ("Id") ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT "_PostToTag_B_fkey" FOREIGN KEY ("B") REFERENCES "Tag" ("Id") ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX "_PostToTag_AB_unique" ON "_PostToTag"("A", "B");
+
+-- CreateIndex
+CREATE INDEX "_PostToTag_B_index" ON "_PostToTag"("B");
