@@ -7,6 +7,18 @@ async function main() {
 	console.log(`Start seeding ...`);
 
 	for (const p of PostData) {
+		const tagIds: number[] = [];
+		for (const t of p.Tags) {
+			const existing = await prisma.tag.findFirst({ where: { Name: t }});
+			if (existing) {
+				tagIds.push(existing.Id);
+				continue;
+			}
+
+			const created = await prisma.tag.create({ data: { Name: t }});
+            tagIds.push(created.Id);
+		}
+
 		const post = await prisma.post.create({
 			data: {
 				Title: p.Title,
@@ -19,11 +31,10 @@ async function main() {
 					}
 				},
 				Tags: {
-					create: p.Tags.map((t) => ({
-						Name: t
-					}))
+					connect: tagIds.map(id => ({ Id: id }))
 				},
-				Published: p.Published
+				Published: p.Published,
+				Featured: p.Featured
 			}
 		});
 		console.log(`Created post with id: ${post.Id}`);

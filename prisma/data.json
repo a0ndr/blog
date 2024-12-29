@@ -5,7 +5,18 @@
         "Slug": "test-post",
         "Image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.photographylife.com%2Fwp-content%2Fuploads%2F2014%2F09%2FNikon-D750-Image-Samples-2.jpg&f=1&nofb=1&ipt=30c50c8c99aa8e0c2e1ce4ff7f04145535739c61e5b33028e7ccc469d7eb6aee&ipo=images",
         "Published": true,
+        "Featured": false,
         "Category": "tech",
         "Tags": ["javascript", "typescript", "nodejs"]
+    },
+    {
+        "Title": "Test post 2",
+        "Content":"This is a test post. It's pretty cool, huh?",
+        "Slug": "test-post2",
+        "Image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.photographylife.com%2Fwp-content%2Fuploads%2F2014%2F09%2FNikon-D750-Image-Samples-2.jpg&f=1&nofb=1&ipt=30c50c8c99aa8e0c2e1ce4ff7f04145535739c61e5b33028e7ccc469d7eb6aee&ipo=images",
+        "Published": false,
+        "Featured": true,
+        "Category": "tech",
+        "Tags": ["javascript", "gin", "go"]
     }
 ]

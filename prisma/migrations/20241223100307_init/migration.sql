@@ -8,6 +8,7 @@ CREATE TABLE "Post" (
     "CreatedAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "UpdatedAt" DATETIME NOT NULL,
     "Published" BOOLEAN NOT NULL DEFAULT false,
+    "Featured" BOOLEAN NOT NULL DEFAULT false,
     "CategoryId" INTEGER,
     CONSTRAINT "Post_CategoryId_fkey" FOREIGN KEY ("CategoryId") REFERENCES "Category" ("Id") ON DELETE SET NULL ON UPDATE CASCADE
 );

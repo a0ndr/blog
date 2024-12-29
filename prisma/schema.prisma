@@ -21,7 +21,9 @@ model Post {
 
   CreatedAt DateTime @default(now())
   UpdatedAt DateTime @updatedAt
+
   Published Boolean @default(false)
+  Featured Boolean @default(false)
 
   Category Category? @relation(fields: [CategoryId], references: [Id])
   CategoryId Int?
